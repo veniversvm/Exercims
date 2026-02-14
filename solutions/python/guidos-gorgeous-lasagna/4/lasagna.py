@@ -1,0 +1,50 @@
+"""Functions used in preparing Guido's gorgeous lasagna.
+
+Learn about Guido, the creator of the Python language:
+https://en.wikipedia.org/wiki/Guido_van_Rossum
+
+This is a module docstring, used to describe the functionality
+of a module and its functions and/or classes.
+"""
+
+EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 2
+
+def bake_time_remaining(elapsed_bake_time: int) -> int:
+    """Calculate the bake time remaining.
+
+    :param elapsed_bake_time: int - baking time already elapsed.
+    :return: int - remaining bake time (in minutes) derived from 'EXPECTED_BAKE_TIME'.
+
+    Function that takes the actual minutes the lasagna has been in the oven as
+    an argument and returns how many minutes the lasagna still needs to bake
+    based on the `EXPECTED_BAKE_TIME`.
+    """
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
+
+
+
+def preparation_time_in_minutes(number_of_layers: int) -> int:
+    """Calculate the prepation time by the total number of layerd.
+
+    :number_of_layers: int - Number of layers to bake.
+    :return: int -necessary time to bake all the layers.
+
+    Function that takes the actual number of layer to bake y multiplies time
+    the 'PREPARATION_TIME' .
+    """
+    return  number_of_layers * PREPARATION_TIME
+
+
+def elapsed_time_in_minutes(number_of_layers: int, elapsed_bake_time: int) -> int:
+    """Calculates the toal elapse time in the preparation.
+
+    :param elapsed_bake_time: int - baking time already elapsed.
+    :number_of_layers: int - Number of layers to bake.
+
+    Function take the 'number_of_layers' ans pass to 'preparation_time_in_minutes',
+    then teh result is added to the 'elapsed_bake_time' param to return the result.
+    """
+    return elapsed_bake_time + preparation_time_in_minutes(number_of_layers)
+    
+
